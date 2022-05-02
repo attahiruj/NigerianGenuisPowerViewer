@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GeniusPowerViewer</title>
+
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="total_output">
+                <h1 class="current" id="current">22A</h1>
+                <h1 class="voltage" id="voltage">48V</h1>
+                <h1 class="power" id="power">140W</h1>
+        </div>
+        <div class="detailed_output">
+            <div class="card solar">
+                <div class="top">
+                    <i class="uil uil-sun"></i>
+                    <h2>Solar</h2>
+                </div>
+                <div class="bottom">
+                    <div class="left">
+                        <h3>Voltage:<span class="voltage" id="voltage_solar">48V</span></h3>
+                        <h3>Current:<span class="current" id="current_solar">3V</span></h3>
+                    </div>
+                    <div class="right">
+                        <h1 class="power" id="power_solar">50W</h1>
+                        <img src="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/64/000000/external-solar-panel-renewable-energy-flaticons-lineal-color-flat-icons.png"/>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="card Wind">
+                <div class="top">
+                    <i class="uil uil-bolt-alt"></i>
+                    <h2>Wind</h2>
+                </div>
+                <div class="bottom">
+                    <div class="left">
+                        <h3>Voltage:<span class="voltage" id="voltage_wind">48V</span></h3>
+                        <h3>Current:<span class="current" id="current_wind">3V</span></h3>
+                    </div>
+                    <div class="right">
+                        <h1 class="power" id="power_wind">50W</h1>
+                        <img src="https://img.icons8.com/external-justicon-lineal-color-justicon/64/000000/external-wind-turbine-spring-season-justicon-lineal-color-justicon.png"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+
+    <script type="module">
+        // alert("");
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.7.0/firebase-app.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+      
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+            apiKey: "AIzaSyAAR8-hu-uQcn7-yajNhTHJwolllTDZHG8",
+            authDomain: "nigeriangenius-b5db6.firebaseapp.com",
+            databaseURL: "https://nigeriangenius-b5db6-default-rtdb.europe-west1.firebasedatabase.app",
+            projectId: "nigeriangenius-b5db6",
+            storageBucket: "nigeriangenius-b5db6.appspot.com",
+            messagingSenderId: "471399120988",
+            appId: "1:471399120988:web:6b6f2d1adba491bc44a699",
+            measurementId: "G-2MHJJEY9QM"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        
+        import { getDatabase, ref, onValue } from "https://www.gstatic.com/firebasejs/9.7.0/firebase-database.js";
+
+        const db = getDatabase();
+
+
+        const tCurrentRef = ref(db, 'total/tcurrent');
+        onValue(tCurrentRef, (snapshot) =>{
+            const tcurrent = snapshot.val(); 
+            console.log(tcurrent);
+            document.getElementById('current').innerHTML = (tcurrent + 'A');
+        });
+
+        const tVoltagetRef = ref(db, 'total/tvoltage');
+        onValue(tVoltagetRef, (snapshot) =>{
+            const tvoltage = snapshot.val(); 
+            console.log(tvoltage);
+            document.getElementById('voltage').innerHTML = (tvoltage + 'V');
+        });
+
+        const tPowerRef = ref(db, 'total/tpower');
+        onValue(tPowerRef, (snapshot) =>{
+            const tpower = snapshot.val(); 
+            console.log(tpower);
+            document.getElementById('power').innerHTML = (tpower + 'W');
+        });
+//-------------Solar--------------------//
+        const sCurrentRef = ref(db, 'solar/scurrent');
+        onValue(sCurrentRef, (snapshot) =>{
+            const scurrent = snapshot.val(); 
+            console.log(scurrent);
+            document.getElementById('current_solar').innerHTML = (scurrent + 'A');
+        });
+
+        const sVoltagetRef = ref(db, 'solar/svoltage');
+        onValue(sVoltagetRef, (snapshot) =>{
+            const svoltage = snapshot.val(); 
+            console.log(svoltage);
+            document.getElementById('voltage_solar').innerHTML = (svoltage + 'V');
+        });
+
+        const sPowerRef = ref(db, 'solar/spower');
+        onValue(sPowerRef, (snapshot) =>{
+            const spower = snapshot.val(); 
+            console.log(spower);
+            document.getElementById('power_solar').innerHTML = (spower + 'W');
+        });
+
+//---------------------Wind--------------------//
+const wCurrentRef = ref(db, 'wind/wcurrent');
+        onValue(wCurrentRef, (snapshot) =>{
+            const wcurrent = snapshot.val(); 
+            console.log(wcurrent);
+            document.getElementById('current_wind').innerHTML = (wcurrent + 'A');
+        });
+
+        const wVoltagetRef = ref(db, 'wind/wvoltage');
+        onValue(wVoltagetRef, (snapshot) =>{
+            const wvoltage = snapshot.val(); 
+            console.log(wvoltage);
+            document.getElementById('voltage_wind').innerHTML = (wvoltage + 'V');
+        });
+
+        const wPowerRef = ref(db, 'wind/wpower');
+        onValue(wPowerRef, (snapshot) =>{
+            const wpower = snapshot.val(); 
+            console.log(wpower);
+            document.getElementById('power_wind').innerHTML = (wpower + 'W');
+        });
+
+    </script>
+
+</body>
+</html>
