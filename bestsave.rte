@@ -1,0 +1,391 @@
+ (routes 
+  (resolution mm 100000)
+  (parser
+  )
+  (parser
+  )
+  (structure_out
+   (layer TOP (type signal)
+   )
+   (layer I1 (type signal)
+   )
+   (layer I2 (type signal)
+   )
+   (layer I3 (type signal)
+   )
+   (layer I4 (type signal)
+   )
+   (layer I5 (type signal)
+   )
+   (layer I6 (type signal)
+   )
+   (layer I7 (type signal)
+   )
+   (layer I8 (type signal)
+   )
+   (layer I9 (type signal)
+   )
+   (layer I10 (type signal)
+   )
+   (layer I11 (type signal)
+   )
+   (layer I12 (type signal)
+   )
+   (layer I13 (type signal)
+   )
+   (layer I14 (type signal)
+   )
+   (layer BOT (type signal)
+   )
+  )
+  (library_out
+  (padstack $VIA#0_SIGNAL
+   (shape (circ TOP 76200 0 0))
+   (shape (circ I1 76200 0 0))
+   (shape (circ I2 76200 0 0))
+   (shape (circ I3 76200 0 0))
+   (shape (circ I4 76200 0 0))
+   (shape (circ I5 76200 0 0))
+   (shape (circ I6 76200 0 0))
+   (shape (circ I7 76200 0 0))
+   (shape (circ I8 76200 0 0))
+   (shape (circ I9 76200 0 0))
+   (shape (circ I10 76200 0 0))
+   (shape (circ I11 76200 0 0))
+   (shape (circ I12 76200 0 0))
+   (shape (circ I13 76200 0 0))
+   (shape (circ I14 76200 0 0))
+   (shape (circ BOT 76200 0 0))
+  )
+  (padstack $VIA#0_POWER
+   (shape (circ TOP 76200 0 0))
+   (shape (circ I1 76200 0 0))
+   (shape (circ I2 76200 0 0))
+   (shape (circ I3 76200 0 0))
+   (shape (circ I4 76200 0 0))
+   (shape (circ I5 76200 0 0))
+   (shape (circ I6 76200 0 0))
+   (shape (circ I7 76200 0 0))
+   (shape (circ I8 76200 0 0))
+   (shape (circ I9 76200 0 0))
+   (shape (circ I10 76200 0 0))
+   (shape (circ I11 76200 0 0))
+   (shape (circ I12 76200 0 0))
+   (shape (circ I13 76200 0 0))
+   (shape (circ I14 76200 0 0))
+   (shape (circ BOT 76200 0 0))
+  )
+  )
+  (network_out
+   (Net #00034 
+   (rule
+   )
+   )
+   (Net #00035 
+   (rule
+   )
+   )
+   (Net #00036 
+   (rule
+   )
+   )
+   (Net #00037 
+   (rule
+   )
+   )
+   (Net #00049 
+   (rule
+   )
+   (wire (path BOT 152400  -3000000 5400000 -2743200 5400000 -2743200 7239000
+     -1524000 7239000 -1524000 6808000 -800000 6808000)
+    (connect (terminal pin R1-1) (terminal pin WIND-1))
+   )
+   )
+   (Net #00074 
+   (rule
+   )
+   (wire (path BOT 152400  -3000000 6600000 -3000000 8300000 -800000 8300000)
+    (connect (terminal pin R4-1) (terminal pin SOLAR-1))
+   )
+   )
+   (Net #00079 
+   (rule
+   )
+   (wire (path BOT 152400  -6826000 3422000 -7543800 3422000 -7543800 3200400
+     -7800000 3200400 -7800000 3500000)
+    (connect (terminal pin SIM1-14) (terminal pin RXTX-1))
+   )
+   )
+   (Net #00080 
+   (rule
+   )
+   (wire (path BOT 152400  -6826000 3676000 -7543800 3676000 -7543800 3754000
+     -7800000 3754000)
+    (connect (terminal pin SIM1-15) (terminal pin RXTX-0))
+   )
+   )
+   (Net 3.3V 
+   (rule
+   )
+   )
+   (Net CURRENT 
+   (rule
+   )
+   (wire (path BOT 152400  -1454000 2300000 -1454000 2057400 -1981200 2057400
+     -1981200 2743200 -1752600 2743200 -1752600 4184000 -2000000 4184000)
+    (connect (terminal pin "CURRENT SENSOR"-1) (terminal pin SIM1-10))
+   )
+   )
+   (Net D4 
+   (rule
+   )
+   (wire (path BOT 152400  -4500000 2300000 -4500000 2514600 -5257800 2514600
+     -5257800 4438000 -6826000 4438000)
+    (connect (terminal pin LCD-10) (terminal pin SIM1-18))
+   )
+   )
+   (Net D5 
+   (rule
+   )
+   (wire (path BOT 152400  -4300000 2300000 -4300000 2743200 -5029200 2743200
+     -5029200 4692000 -6826000 4692000)
+    (connect (terminal pin LCD-11) (terminal pin SIM1-19))
+   )
+   )
+   (Net D6 
+   (rule
+   )
+   (wire (path BOT 152400  -4100000 2300000 -4100000 2971800 -4800600 2971800
+     -4800600 4946000 -6826000 4946000)
+    (connect (terminal pin LCD-12) (terminal pin SIM1-20))
+   )
+   )
+   (Net D7 
+   (rule
+   )
+   (wire (path BOT 152400  -3900000 2300000 -3900000 3657600 -4572000 3657600
+     -4572000 5200000 -6826000 5200000)
+    (connect (terminal pin LCD-13) (terminal pin SIM1-21))
+   )
+   )
+   (Net D8 
+   (rule
+   )
+   )
+   (Net E 
+   (rule
+   )
+   (wire (path BOT 152400  -6826000 4184000 -5500000 4184000 -5500000 2300000)
+    (connect (terminal pin SIM1-17) (terminal pin LCD-5))
+   )
+   )
+   (Net GND 
+   (rule
+   )
+   (wire (path BOT 152400  -4343400 5638800 -4343400 4114800 -3657600 4114800
+     -3657600 2800000 -3300000 2800000)
+    (connect (terminal wire) (terminal pin R3-1))
+   )
+   (wire (path BOT 152400  -5715000 2057400 -3300000 2057400 -3300000 2800000)
+    (connect (terminal wire) (terminal pin R3-1))
+   )
+   (wire (path BOT 152400  -5715000 2057400 -5867400 2057400)
+    (connect (terminal wire) (terminal wire))
+   )
+   (wire (path BOT 152400  -800000 7792000 -533400 7792000 -533400 8610600
+     -3429000 8610600 -3429000 7086600)
+    (connect (terminal pin SOLAR-0) (terminal wire))
+   )
+   (wire (path BOT 152400  -3000000 4800000 -3810000 4800000 -3810000 5638800
+     -4343400 5638800)
+    (connect (terminal pin R7-0) (terminal wire))
+   )
+   (wire (path BOT 152400  -2000000 5454000 -1524000 5454000 -1524000 2514600
+     -1708000 2514600 -1708000 2300000)
+    (connect (terminal pin SIM1-6) (terminal pin "CURRENT SENSOR"-2))
+   )
+   (wire (path BOT 152400  -8600000 7600000 -7543800 7600000 -7543800 7104999
+     -6826000 7104999)
+    (connect (terminal pin MOTOR-2) (terminal pin SIM1-28))
+   )
+   (wire (path BOT 152400  -3352800 5943600 -3352800 5208250 -2514600 5208250
+     -2514600 5708000 -2000000 5708000)
+    (connect (terminal wire) (terminal pin SIM1-5))
+   )
+   (wire (path BOT 152400  -3429000 7086600 -3200400 7086600 -3200400 6858000
+     -3352800 6858000 -3352800 5943600)
+    (connect (terminal wire) (terminal wire))
+   )
+   (wire (path BOT 152400  -8153400 1746000 -8400000 1746000)
+    (connect (terminal wire) (terminal pin J1-4))
+   )
+   (wire (path BOT 152400  -5867400 2057400 -6100000 2057400 -6100000 2300000)
+    (connect (terminal wire) (terminal pin LCD-2))
+   )
+   (wire (path BOT 152400  -6826000 7104999 -6096000 7104999 -6096000 7086600
+     -4343400 7086600)
+    (connect (terminal pin SIM1-28) (terminal wire))
+   )
+   (wire (path BOT 152400  -3000000 6000000 -3000000 5943600 -3352800 5943600)
+    (connect (terminal pin R5-0) (terminal wire))
+   )
+   (wire (path BOT 152400  -800000 7792000 -800000 7467600 -533400 7467600
+     -533400 6300000 -800000 6300000)
+    (connect (terminal pin SOLAR-0) (terminal pin WIND-0))
+   )
+   (wire (path BOT 152400  -4343400 5638800 -4343400 7086600)
+    (connect (terminal wire) (terminal wire))
+   )
+   (wire (path BOT 152400  -3429000 7086600 -4343400 7086600)
+    (connect (terminal wire) (terminal wire))
+   )
+   (wire (path BOT 152400  -6500000 1701800 -5867400 1701800)
+    (connect (terminal wire) (terminal wire))
+   )
+   (wire (path BOT 152400  -6500000 2300000 -6500000 1701800)
+    (connect (terminal pin LCD-0) (terminal wire))
+   )
+   (wire (path BOT 152400  -8400000 2254000 -8153400 2254000 -8153400 1746000)
+    (connect (terminal pin J1-2) (terminal wire))
+   )
+   (wire (path BOT 152400  -8153400 1746000 -7620000 1746000 -7620000 1701800
+     -6500000 1701800)
+    (connect (terminal wire) (terminal wire))
+   )
+   (wire (path BOT 152400  -3300000 2800000 -2800000 2800000)
+    (connect (terminal pin R3-1) (terminal pin R2-1))
+   )
+   (wire (path BOT 152400  -5867400 1701800 -5867400 2057400)
+    (connect (terminal wire) (terminal wire))
+   )
+   (wire (path BOT 152400  -2000000 5708000 -2000000 5454000)
+    (connect (terminal pin SIM1-5) (terminal pin SIM1-6))
+   )
+   (wire (path BOT 152400  -5700000 2300000 -5689600 2300000 -5689600 2057400
+     -5715000 2057400)
+    (connect (terminal pin LCD-4) (terminal wire))
+   )
+   )
+   (Net IOREF 
+   (rule
+   )
+   )
+   (Net LDR1 
+   (rule
+   )
+   (wire (path BOT 152400  -8500000 6254000 -8991600 6254000 -8991600 1524000
+     -2590800 1524000 -2590800 3048000 -3300000 3048000 -3300000 3816000)
+    (connect (terminal pin LDR1-0) (terminal pin R3-0))
+   )
+   (wire (path BOT 152400  -2000000 3930000 -2362200 3930000 -2362200 4038600
+     -3300000 4038600 -3300000 3816000)
+    (connect (terminal pin SIM1-11) (terminal pin R3-0))
+   )
+   )
+   (Net LDR2 
+   (rule
+   )
+   (wire (path BOT 152400  -2800000 3816000 -2800000 3276600 -2362200 3276600
+     -2362200 1295400 -9448800 1295400 -9448800 6477000 -8229600 6477000
+     -8229600 5715000 -8500000 5715000 -8500000 5054000)
+    (connect (terminal pin R2-0) (terminal pin LDR2-0))
+   )
+   (wire (path BOT 152400  -2209800 3676000 -2590800 3676000 -2590800 3816000
+     -2800000 3816000)
+    (connect (terminal wire) (terminal pin R2-0))
+   )
+   (wire (path BOT 152400  -2000000 3676000 -2000000 3675999 -2209800 3675999
+     -2209800 3676000)
+    (connect (terminal pin SIM1-12) (terminal wire))
+   )
+   )
+   (Net MOTOR 
+   (rule
+   )
+   (wire (path BOT 152400  -8600000 7092000 -7772400 7092000 -7772400 5835000
+     -6826000 5835000)
+    (connect (terminal pin MOTOR-0) (terminal pin SIM1-23))
+   )
+   )
+   (Net NC 
+   (rule
+   )
+   )
+   (Net RS 
+   (rule
+   )
+   (wire (path BOT 152400  -6826000 3930000 -5900000 3930000 -5900000 2300000)
+    (connect (terminal pin SIM1-16) (terminal pin LCD-3))
+   )
+   )
+   (Net RX 
+   (rule
+   )
+   )
+   (Net SOLAR 
+   (rule
+   )
+   (wire (path BOT 152400  -4016000 6000000 -3581400 6000000 -3581400 5029200
+     -2743200 5029200 -2743200 4953000 -1752600 4953000 -1752600 4438000
+     -2000000 4438000)
+    (connect (terminal pin R5-1) (terminal pin SIM1-9))
+   )
+   (wire (path BOT 152400  -4016000 6600000 -4016000 6000000)
+    (connect (terminal pin R4-0) (terminal pin R5-1))
+   )
+   )
+   (Net TX 
+   (rule
+   )
+   )
+   (Net VCC/VDD 
+   (rule
+   )
+   (wire (path BOT 152400  -9067800 7346000 -9067800 9067800 -76200 9067800
+     -76200 5715000 -1219200 5715000)
+    (connect (terminal wire) (terminal wire))
+   )
+   (wire (path BOT 152400  -9067800 7346000 -9067800 6705600 -8001000 6705600
+     -8001000 4800000 -8500000 4800000)
+    (connect (terminal wire) (terminal pin LDR2-1))
+   )
+   (wire (path BOT 152400  -6300000 2300000 -6300000 2762000 -8400000 2762000)
+    (connect (terminal pin LCD-1) (terminal pin J1-0))
+   )
+   (wire (path BOT 152400  -8400000 2762000 -8400000 4343400 -8500000 4343400
+     -8500000 4800000)
+    (connect (terminal pin J1-0) (terminal pin LDR2-1))
+   )
+   (wire (path BOT 152400  -1219200 5715000 -1219200 5962000 -2000000 5962000)
+    (connect (terminal wire) (terminal pin SIM1-4))
+   )
+   (wire (path BOT 152400  -1200000 2300000 -1200000 2971800 -1219200 2971800
+     -1219200 5715000)
+    (connect (terminal pin "CURRENT SENSOR"-0) (terminal wire))
+   )
+   (wire (path BOT 152400  -8500000 6000000 -8763000 6000000 -8763000 4800000
+     -8500000 4800000)
+    (connect (terminal pin LDR1-1) (terminal pin LDR2-1))
+   )
+   (wire (path BOT 152400  -8600000 7346000 -8600000 7345999 -8839200 7345999
+     -8839200 7346000 -9067800 7346000)
+    (connect (terminal pin MOTOR-1) (terminal wire))
+   )
+   )
+   (Net VIN 
+   (rule
+   )
+   )
+   (Net WIND 
+   (rule
+   )
+   (wire (path BOT 152400  -4016000 4800000 -4016000 4572000 -2743200 4572000
+     -2743200 4692000 -2000000 4692000)
+    (connect (terminal pin R7-1) (terminal pin SIM1-8))
+   )
+   (wire (path BOT 152400  -4016000 5400000 -4016000 4800000)
+    (connect (terminal pin R1-0) (terminal pin R7-1))
+   )
+   )
+  )
+ )
