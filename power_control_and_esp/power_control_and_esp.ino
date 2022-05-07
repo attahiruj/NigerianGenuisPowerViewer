@@ -126,7 +126,7 @@ if((abs(val1 - val2) <= tolerance) || (abs(val2 - val1) <= tolerance)) {
     myservo.write(pos); // write the starting position to the horizontal motor
     delay(300);
 
-data_out =String(wind_voltage)+String(",")+String(solar_voltage)+String(",")+String(totalVoltage)+String(",")+String(current)+String(",")+String(power)+String(",");
+data_out =String(wind_voltage)+String(",")+String(solar_voltage)+String(",")+String(current)+String(",");
 espSerial.println(data_out);
 if(espSerial.println(data_out)){
   Serial.println("data out");

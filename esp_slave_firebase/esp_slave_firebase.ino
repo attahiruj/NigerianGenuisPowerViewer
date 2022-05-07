@@ -38,6 +38,9 @@ unsigned long sendDataPrevMillis = 0;
 
 unsigned long count = 0;
 
+float power =0;
+float totalVoltage =0;
+
 void setup() {
   Serial.begin(115200);
   WiFi.begin(WIFI_SSID, WIFI_PASSWORD);
@@ -113,11 +116,16 @@ void loop(){
     //Put values from the array into the variables.
     String wind_voltage = strArr[0];
     String solar_voltage = strArr[1];
-    String totalVoltage = strArr[2];
-    String current = strArr[3];
-    String power = strArr[4];
+    String current = strArr[2];
 
 
+    int w_voltage = wind_voltage.toInt();
+    int s_voltage = solar_voltage.toInt();
+    int current_in = current.toInt();
+
+    totalVoltage =w_voltage + s_voltage;
+    power = totalVoltage * current_in;
+    
 if (Firebase.ready() && (millis() - sendDataPrevMillis > 15000 || sendDataPrevMillis == 0))
   {
     sendDataPrevMillis = millis();
