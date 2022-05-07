@@ -68,7 +68,12 @@ body{
     align-items: center;
     gap: 2rem;
 }
-
+.container .header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
 .container .total_output{
     display: flex;
     justify-content: space-around;
@@ -136,12 +141,12 @@ body{
         flex-direction: column;
     }
     
-    .container .total_output{
+    .container .header{
         position: fixed;
     }
     .container .detailed_output{
         flex-direction: column;
-        margin-top: 8rem;
+        margin-top: 10rem;
         gap: 2rem;
     }
 }

@@ -125,7 +125,7 @@ if (Firebase.ready() && (millis() - sendDataPrevMillis > 15000 || sendDataPrevMi
     //Firebase.RTDB.set(&fbdo, F("/001/x/"), 80);
 //    data_payload payload;
 
-    Serial.printf("Set data... %s\n", Firebase.RTDB.set(&fbdo, F("/wind/w voltage/"), wind_voltage) ? "ok" : fbdo.errorReason().c_str());
+    Serial.printf("Set data... %s\n", Firebase.RTDB.set(&fbdo, F("/wind/wvoltage/"), wind_voltage) ? "ok" : fbdo.errorReason().c_str());
     Serial.printf("Set data... %s\n", Firebase.RTDB.set(&fbdo, F("/solar/svoltage/"), solar_voltage) ? "ok" : fbdo.errorReason().c_str());
     Serial.printf("Set data... %s\n", Firebase.RTDB.set(&fbdo, F("/total/tvoltage/"), totalVoltage) ? "ok" : fbdo.errorReason().c_str());
     Serial.printf("Set data... %s\n", Firebase.RTDB.set(&fbdo, F("/total/tcurrent/"), current) ? "ok" : fbdo.errorReason().c_str());
