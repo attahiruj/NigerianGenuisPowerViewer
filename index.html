@@ -25,10 +25,10 @@
                 <div class="bottom">
                     <div class="left">
                         <h3>Voltage:<span class="voltage" id="voltage_solar">48V</span></h3>
-                        <h3>Current:<span class="current" id="current_solar">3V</span></h3>
+                        <!-- <h3>Current:<span class="current" id="current_solar">3V</span></h3> -->
                     </div>
                     <div class="right">
-                        <h1 class="power" id="power_solar">50W</h1>
+                        <!-- <h1 class="power" id="power_solar">50W</h1> -->
                         <img src="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/64/000000/external-solar-panel-renewable-energy-flaticons-lineal-color-flat-icons.png"/>
                     </div>
                 </div>
@@ -42,10 +42,10 @@
                 <div class="bottom">
                     <div class="left">
                         <h3>Voltage:<span class="voltage" id="voltage_wind">48V</span></h3>
-                        <h3>Current:<span class="current" id="current_wind">3V</span></h3>
+                        <!-- <h3>Current:<span class="current" id="current_wind">3V</span></h3> -->
                     </div>
                     <div class="right">
-                        <h1 class="power" id="power_wind">50W</h1>
+                        <!-- <h1 class="power" id="power_wind">50W</h1> -->
                         <img src="https://img.icons8.com/external-justicon-lineal-color-justicon/64/000000/external-wind-turbine-spring-season-justicon-lineal-color-justicon.png"/>
                     </div>
                 </div>
@@ -103,12 +103,12 @@
             document.getElementById('power').innerHTML = (tpower + 'W');
         });
 //-------------Solar--------------------//
-        const sCurrentRef = ref(db, 'solar/scurrent');
-        onValue(sCurrentRef, (snapshot) =>{
-            const scurrent = snapshot.val(); 
-            console.log(scurrent);
-            document.getElementById('current_solar').innerHTML = (scurrent + 'A');
-        });
+        // const sCurrentRef = ref(db, 'solar/scurrent');
+        // onValue(sCurrentRef, (snapshot) =>{
+        //     const scurrent = snapshot.val(); 
+        //     console.log(scurrent);
+        //     document.getElementById('current_solar').innerHTML = (scurrent + 'A');
+        // });
 
         const sVoltagetRef = ref(db, 'solar/svoltage');
         onValue(sVoltagetRef, (snapshot) =>{
@@ -117,20 +117,20 @@
             document.getElementById('voltage_solar').innerHTML = (svoltage + 'V');
         });
 
-        const sPowerRef = ref(db, 'solar/spower');
-        onValue(sPowerRef, (snapshot) =>{
-            const spower = snapshot.val(); 
-            console.log(spower);
-            document.getElementById('power_solar').innerHTML = (spower + 'W');
-        });
+        // const sPowerRef = ref(db, 'solar/spower');
+        // onValue(sPowerRef, (snapshot) =>{
+        //     const spower = snapshot.val(); 
+        //     console.log(spower);
+        //     document.getElementById('power_solar').innerHTML = (spower + 'W');
+        // });
 
 //---------------------Wind--------------------//
-const wCurrentRef = ref(db, 'wind/wcurrent');
-        onValue(wCurrentRef, (snapshot) =>{
-            const wcurrent = snapshot.val(); 
-            console.log(wcurrent);
-            document.getElementById('current_wind').innerHTML = (wcurrent + 'A');
-        });
+        // const wCurrentRef = ref(db, 'wind/wcurrent');
+        // onValue(wCurrentRef, (snapshot) =>{
+        //     const wcurrent = snapshot.val(); 
+        //     console.log(wcurrent);
+        //     document.getElementById('current_wind').innerHTML = (wcurrent + 'A');
+        // });
 
         const wVoltagetRef = ref(db, 'wind/wvoltage');
         onValue(wVoltagetRef, (snapshot) =>{
@@ -139,12 +139,12 @@ const wCurrentRef = ref(db, 'wind/wcurrent');
             document.getElementById('voltage_wind').innerHTML = (wvoltage + 'V');
         });
 
-        const wPowerRef = ref(db, 'wind/wpower');
-        onValue(wPowerRef, (snapshot) =>{
-            const wpower = snapshot.val(); 
-            console.log(wpower);
-            document.getElementById('power_wind').innerHTML = (wpower + 'W');
-        });
+        // const wPowerRef = ref(db, 'wind/wpower');
+        // onValue(wPowerRef, (snapshot) =>{
+        //     const wpower = snapshot.val(); 
+        //     console.log(wpower);
+        //     document.getElementById('power_wind').innerHTML = (wpower + 'W');
+        // });
 
     </script>
 

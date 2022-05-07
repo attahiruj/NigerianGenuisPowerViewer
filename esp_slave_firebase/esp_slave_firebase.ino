@@ -111,11 +111,12 @@ void loop(){
     }
   
     //Put values from the array into the variables.
-    String value1 = strArr[0];
-    String value2 = strArr[1];
+    String wind_voltage = strArr[0];
+    String solar_voltage = strArr[1];
+    String totalVoltage = strArr[2];
+    String current = strArr[3];
+    String power = strArr[4];
 
-    Serial.println(value1);
-    Serial.println(value2);
 
 if (Firebase.ready() && (millis() - sendDataPrevMillis > 15000 || sendDataPrevMillis == 0))
   {
@@ -124,13 +125,18 @@ if (Firebase.ready() && (millis() - sendDataPrevMillis > 15000 || sendDataPrevMi
     //Firebase.RTDB.set(&fbdo, F("/001/x/"), 80);
 //    data_payload payload;
 
-    Serial.printf("Set data... %s\n", Firebase.RTDB.set(&fbdo, F("/total/tvoltage/"), value1) ? "ok" : fbdo.errorReason().c_str());
-    Serial.printf("Set data... %s\n", Firebase.RTDB.set(&fbdo, F("/total/tcurrent/"), value2) ? "ok" : fbdo.errorReason().c_str());
-
+    Serial.printf("Set data... %s\n", Firebase.RTDB.set(&fbdo, F("/wind/w voltage/"), wind_voltage) ? "ok" : fbdo.errorReason().c_str());
+    Serial.printf("Set data... %s\n", Firebase.RTDB.set(&fbdo, F("/solar/svoltage/"), solar_voltage) ? "ok" : fbdo.errorReason().c_str());
+    Serial.printf("Set data... %s\n", Firebase.RTDB.set(&fbdo, F("/total/tvoltage/"), totalVoltage) ? "ok" : fbdo.errorReason().c_str());
+    Serial.printf("Set data... %s\n", Firebase.RTDB.set(&fbdo, F("/total/tcurrent/"), current) ? "ok" : fbdo.errorReason().c_str());
+    Serial.printf("Set data... %s\n", Firebase.RTDB.set(&fbdo, F("/total/tpower/"), power) ? "ok" : fbdo.errorReason().c_str());
+   
     Serial.println();
 
     count++;
   }
-    delay(300);
+    //Convert string to int if you need it.
+//    int voltage = value1.toInt();
+//    int current = value2.toInt();
   }
 }

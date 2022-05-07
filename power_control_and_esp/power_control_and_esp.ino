@@ -8,7 +8,10 @@ String data_out;
 //const int rs=12, en=11, d4=5, d5=4, d6=3, d7=2;
 //LiquidCrystal lcd(rs, en, d4, d5, d6, d7)// LCD module connections (RS, E, D4, D5, D6, D7)
 ;
-float input_voltage = 0.0;
+float wind_voltage = 0.0;
+float solar_voltage = 0.0;
+float totalVoltage = 0.0;
+float power = 0.0;
 LiquidCrystal lcd(2, 3, 4, 5, 6, 7);
 int R1 = 100000;
 int R2 = 1000;
@@ -48,18 +51,30 @@ void loop() {
   byte Mastersend;
  
 //Conversion formula for voltage
-   int analog_value = analogRead(A0);
-   input_voltage = (analog_value * (5 / 1024.0) * ((R1+R2)/R2)); 
+   int wind_value = analogRead(A0);
+   int solar_value = analogRead(A1);
+   int totalVoltage;
+   wind_voltage = (wind_value * (5 / 1024.0) * ((R1+R2)/R2));
+   solar_voltage = (solar_value * (5 / 1024.0) * ((R1+R2)/R2)); 
    
-   if (input_voltage < 0.1) 
+   if (wind_voltage < 0.1) 
    {
-     input_voltage=0.0;
+     wind_voltage=0.0;
    } 
-    Serial.print("v= ");
-    Serial.println(input_voltage);
+   if (solar_voltage < 0.1) 
+   {
+     solar_voltage=0.0;
+   } 
+    Serial.print("vWind= ");
+    Serial.println(wind_voltage);
+    Serial.print("vSolar= ");
+    Serial.println(solar_voltage);
+    
+    totalVoltage = wind_voltage + solar_voltage;
+    
     lcd.setCursor(0, 1);
     lcd.print("Voltage= ");
-    lcd.print(input_voltage);
+    lcd.print(totalVoltage);
 
     delay (100);
 
@@ -88,6 +103,7 @@ void loop() {
     lcd.print("Current= ");
     lcd.print(current);
 
+  int power = (current * totalVoltage);
 //LDR Servo
 int val1 = analogRead(ldr1); // read the value of ldr 1
 Serial.println(val1);
@@ -110,7 +126,7 @@ if((abs(val1 - val2) <= tolerance) || (abs(val2 - val1) <= tolerance)) {
     myservo.write(pos); // write the starting position to the horizontal motor
     delay(300);
 
-data_out =String(input_voltage)+String(",")+String(current)+String(",");
+data_out =String(wind_voltage)+String(",")+String(solar_voltage)+String(",")+String(totalVoltage)+String(",")+String(current)+String(",")+String(power)+String(",");
 espSerial.println(data_out);
 if(espSerial.println(data_out)){
   Serial.println("data out");
